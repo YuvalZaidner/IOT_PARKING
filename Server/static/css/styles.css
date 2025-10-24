@@ -1,0 +1,127 @@
+:root{
+  --free: #6fa8dc; /* blue */
+  --waiting: #f6b26b; /* orange */
+  --occupied: #e06666; /* red */
+  --wrong: #7a4bd6; /* purple for wrong-park */
+  --bg: #f7f7f7;
+}
+body{font-family: Arial, sans-serif; background:var(--bg); margin:0; padding:12px}
+.container{max-width:1100px;margin:0 auto;position:relative}
+h1{margin:8px 0}
+#controls{display:flex;gap:20px;align-items:center;margin-bottom:12px}
+.badge{display:inline-block;padding:8px 14px;border-radius:20px;background:#d0d0d0}
+.layout{display:flex;gap:30px}
+.left{flex:1}
+.right{width:360px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+.gate-status{position:absolute;right:24px;top:16px;background:#fff;padding:10px 14px;border-radius:8px;border:1px solid #ddd;font-weight:700}
+
+.arriving{position:absolute;right:36px;top:20px;display:flex;align-items:center;gap:12px}
+.arriving-label{background:#000;color:#1e90ff;padding:8px 18px;border-radius:4px;font-weight:700;font-size:20px;box-shadow:0 0 0 6px #000}
+.arriving-id-box{width:140px;min-width:140px;height:40px;border:3px solid #111;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+
+/* wrapper to hold arriving box and the inline banner beneath it */
+.arriving-wrap{position:static;display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:18px}
+.arriving-wrap .arriving{position:static}
+.arriving-wrap .side-banner{margin-top:0;min-width:220px;max-width:420px;width:420px;border-radius:12px;padding:10px 14px;font-size:20px}
+
+/* Make the banner a compact square/box in the right side */
+.arriving-wrap.square .side-banner,
+.arriving-wrap .side-banner.square {
+  /* large rectangular framed card */
+  width:420px;
+  height:260px;
+  min-width:0;
+  max-width:100%;
+  padding:0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:18px;
+  border:12px solid #000; /* thick black frame */
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  font-size:36px;
+  font-weight:900;
+  text-align:center;
+  line-height:1.05;
+  color:#000; /* ensure readable text */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(30,144,255,0.0); }
+  50% { box-shadow: 0 0 12px 4px rgba(30,144,255,0.25); }
+  100% { box-shadow: 0 0 0 0 rgba(30,144,255,0.0); }
+}
+.arriving-id-box.pulse{ animation: pulse 900ms ease-in-out; }
+
+#grid{display:grid;grid-template-columns:repeat(5, 120px);gap:20px}
+.col{display:flex;flex-direction:column;gap:18px;align-items:center}
+.col .gate{width:60px;height:30px;border-radius:8px;background:#222;color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+
+.closest-pill{margin-top:28px;background:var(--free);padding:18px 36px;border-radius:36px;font-size:20px;font-weight:700;color:#03386a;border:4px solid rgba(0,0,0,0.1)}
+.meta{margin-top:12px;color:#666}
+.spot{width:60px;height:40px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold}
+.spot.free{background:var(--free);color:#03386a}
+.spot.waiting{background:var(--waiting);color:#6b2e00}
+.spot.occupied{background:var(--occupied);color:#641414}
+.spot.wrong{background:var(--wrong);color:#fff}
+
+.spot-label{height:18px;line-height:18px}
+
+/* Banner: default is an inline card (not fixed). The arriving-wrap places it under the Arriving ID. */
+.side-banner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg,#9be86a,#7ecf4a);
+  color:#e53935; /* red text */
+  font-weight:800;
+  padding:18px 22px;
+  border:8px solid #000; /* heavy black frame as in design */
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  text-align:center;
+  font-size:22px;
+  line-height:1.1;
+  width:auto !important;
+  max-width:100% !important;
+}
+
+@media (max-width:480px){
+  .side-banner{
+    width:100%;
+    box-sizing:border-box;
+    font-size:16px;
+    padding:12px 14px;
+    border-width:6px;
+  }
+}
+
+/* Inline banner variant when placed inside the right column */
+.right .side-banner{
+  /* when used in the right column, keep it compact */
+  width:420px;
+  max-width:100%;
+  padding:14px 16px;
+  font-size:18px;
+}
+
+/* make sure the fixed-top style doesn't interfere when used inline */
+.side-banner[style*="display:none"]{display:none}
+
+@media (max-width:600px){
+  .spot{width:48px;height:34px;font-size:12px}
+  #grid{gap:8px}
+}
+
+/* responsive adjustments for the side banner */
+@media (max-width:900px){
+  .arriving-wrap.square .side-banner,
+  .arriving-wrap .side-banner.square {
+    width:300px;
+    height:180px;
+    font-size:22px;
+    border-width:10px;
+  }
+  .right{width:320px}
+}

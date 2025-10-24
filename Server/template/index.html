@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Parking Dashboard</title>
+  <link rel="stylesheet" href="/static/css/styles.css?ts={{ ts }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Parking Dashboard</h1>
+      <div class="layout">
+        <div class="left">
+          <div id="grid"></div>
+        </div>
+        <div class="right">
+          <!-- arriving and banner now live inside right column -->
+          <div class="arriving-wrap">
+            <div id="arriving" class="arriving">
+              <span class="arriving-label">Arriving Car ID:</span>
+              <span id="arriving-id" class="arriving-id-box">-</span>
+            </div>
+            <div id="side-banner" class="side-banner" style="display:none">THERE ARE FREE SPOTS IN THE PARK</div>
+          </div>
+
+          <h2>The closest free spot to the gate is :</h2>
+          <div id="closest-pill" class="closest-pill">-</div>
+          <div class="meta">Last update: <span id="ts">-</span></div>
+        </div>
+      </div>
+    </div>
+
+  <script src="/static/js/app.js?ts={{ ts }}"></script>
+  </body>
+</html>

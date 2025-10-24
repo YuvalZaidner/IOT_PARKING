@@ -1,0 +1,22 @@
+import pytest
+from unittest.mock import MagicMock
+
+@pytest.fixture
+def firebase_db_mock(monkeypatch):
+    """
+    Replace firebase_admin.db.reference with a function that returns
+    a MagicMock object with .child().set/.update available.
+    """
+    root_mock = MagicMock()
+    # ensure chaining: root_mock.child(...).set/update exist
+    child_mock = MagicMock()
+    root_mock.child.return_value = child_mock
+
+    def fake_reference(path=None):
+        # return a fresh MagicMock per path for better assertions if needed
+        m = MagicMock()
+        m.child.return_value = MagicMock()
+        return m
+
+    monkeypatch.setattr('firebase_admin.db.reference', fake_reference)
+    return fake_reference
