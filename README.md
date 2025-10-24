@@ -162,21 +162,7 @@ Cathode (-)      →  GND           →  Direct
 
 ---
 
-## Running Tests
 
-### Server Tests (Python)
-```bash
-cd "Server"
-source .venv/bin/activate
-pip install pytest
-pytest "../UNIT TESTS/Server_Tests"
-```
-
-### ESP32 Hardware Tests
-- Open sketches in `UNIT TESTS/ESP32_Tests/`
-- Upload individual test files to verify hardware components
-
----
 
 ## Attribution
 
