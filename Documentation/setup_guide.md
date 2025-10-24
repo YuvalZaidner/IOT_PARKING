@@ -65,20 +65,10 @@
    }
    ```
    
-   ⚠️ **חשוב:** זה פתוח לכולם! לאחר הפיתוח, שנה ל:
-   ```json
-   {
-     "rules": {
-       "SondosPark": {
-         ".read": "auth != null",
-         ".write": "auth != null"
-       }
-     }
-   }
-   ```
-
+  
+   
 5. **העתק את ה-Database URL**:
-   ```
+   
    דוגמה: https://smart-parking-iot-default-rtdb.europe-west1.firebasedatabase.app
    ```
    שמור את זה - תצטרך אותו בהמשך!
