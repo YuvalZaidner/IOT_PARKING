@@ -230,17 +230,6 @@ http://localhost:8000
 
 ---
 
-### 3.2 הוספת ESP32 Boards
-
-1. **File** → **Preferences**
-
-2. **Additional Board Manager URLs** - הוסף:
-   ```
-   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-   ```
-
-3. **Tools** → **Board** → **Boards Manager**
-
 4. **חפש:** `esp32`
 
 5. **התקן:** `esp32 by Espressif Systems` גרסה 2.0.14
