@@ -12,7 +12,7 @@ An IoT-based smart parking management system that monitors parking spot occupanc
 
 **Key Features:**
 - Real-time parking spot monitoring with HC-SR04 ultrasonic sensors
-- RGB LED status indicators (Blue=Free, Orange=Waiting, Red=Occupied)
+- RGB LED status indicators (Blue=Free, Orange=Waiting, Red=Occupied, Purple=Wrong Spot)
 - Firebase Realtime Database for cloud synchronization
 - Flask-based web dashboard with live updates
 - BFS algorithm for optimal path suggestion to nearest free spot
