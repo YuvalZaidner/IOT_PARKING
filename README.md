@@ -81,12 +81,12 @@ ECHO             →  GPIO 18
 
 ### ESP32 to RGB LED (Common Cathode):
 ```
-RGB LED          →  ESP32         →  Resistor
-───────────────────────────────────────────────
-Red (R)          →  GPIO 23       →  220Ω
-Green (G)        →  GPIO 22       →  220Ω
-Blue (B)         →  GPIO 21       →  220Ω
-Cathode (-)      →  GND           →  Direct
+RGB LED          →  ESP32         
+──────────────────────────────
+Red (R)          →  GPIO 23       
+Green (G)        →  GPIO 22       
+Blue (B)         →  GPIO 21       
+Cathode (-)      →  GND           
 ```
 
 **Full wiring diagram:** See `Assets/diagrams/wiring_diagram.png`
