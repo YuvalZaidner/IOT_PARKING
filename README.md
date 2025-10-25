@@ -3,16 +3,23 @@
 ## Project by:
 * **Sondos Taha**
 * **Yuval Zaidner**
-
 ---
 
 ## Details about the project
 
 An IoT-based smart parking management system that monitors parking spot occupancy in real-time using ESP32 microcontrollers, ultrasonic sensors, and Firebase Realtime Database. The system provides a live web dashboard to visualize parking availability and guides drivers to the nearest free spot using BFS path-finding algorithms.
 
+
+
+## Getting started quickly
+
+1. **Skim [`HowToUse.md`](HowToUse.md)** (in the repo root) for the full first-time setup flow (virtualenv, Firebase credentials, dashboard + simulator commands, troubleshooting tips).
+2. Follow the **Quick Start – Server/Dashboard** section below if you just need a refresher on the key commands.
+3. When in doubt, come back to `HowToUse.md`; it is the source of truth for running the project locally.
+
 **Key Features:**
 - Real-time parking spot monitoring with HC-SR04 ultrasonic sensors
-- RGB LED status indicators (Blue=Free, Orange=Waiting, Red=Occupied, Purple=Wrong Spot)
+- RGB LED status indicators (Blue=Free, Orange=Waiting, Red=Occupied ,Purple=Wrong Spot)
 - Firebase Realtime Database for cloud synchronization
 - Flask-based web dashboard with live updates
 - BFS algorithm for optimal path suggestion to nearest free spot
@@ -29,6 +36,8 @@ An IoT-based smart parking management system that monitors parking spot occupanc
   - `simulation_sondos.py` — Simulation scripts for testing
   - `data_structures.py` — ParkingLot and Spot classes with BFS implementation
   - `static/` and `template/` — Frontend assets (CSS, JavaScript, HTML)
+* **Documentation**: Comprehensive guides including:
+  - `HowToUse.md` — Hands-on walkthrough for preparing your environment and running the dashboard + simulator.
 * **UNIT TESTS**: Tests for individual hardware components and server logic:
   - `ESP32_Tests/` — Arduino test sketches (WiFi, Firebase, Ultrasonic, RGB LED)
   - `Server_Tests/` — Python pytest suite for server components and integration tests
@@ -37,6 +46,7 @@ An IoT-based smart parking management system that monitors parking spot occupanc
   - `diagrams/` — Wiring diagrams and system architecture
   - `poster/` — Project presentation poster
   - `screenshots/` — Dashboard and system screenshots
+
 
 ---
 
@@ -81,11 +91,11 @@ ECHO             →  GPIO 18
 
 ### ESP32 to RGB LED (Common Cathode):
 ```
-RGB LED          →  ESP32         
-──────────────────────────────
-Red (R)          →  GPIO 23       
+RGB LED          →  ESP32        
+─────────────────────────────────
+Red (R)          →  GPIO 23      
 Green (G)        →  GPIO 22       
-Blue (B)         →  GPIO 21       
+Blue (B)         →  GPIO 21      
 Cathode (-)      →  GND           
 ```
 
@@ -100,6 +110,8 @@ Cathode (-)      →  GND
 ---
 
 ## How to run the code
+
+> 📘 **First-time here?** Start with [`HowToUse.md`](HowToUse.md) for a step-by-step guide to preparing your environment, running the dashboard, and launching the simulator.
 
 ### Prerequisites
 - Python 3.11+ (tested with 3.13)
@@ -135,8 +147,6 @@ Cathode (-)      →  GND
 ### Quick Start - ESP32 Firmware
 
 1. **Install Arduino IDE and ESP32 board support**
-   - Add ESP32 board manager URL: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
-   - Install ESP32 boards (v2.0.14)
 
 2. **Install required libraries:**
    - WiFiManager (2.0.16-rc.2)
@@ -153,10 +163,7 @@ Cathode (-)      →  GND
    - ESP32 creates "Sondos-Parking-Setup" hotspot
    - Connect and configure your WiFi credentials
 
-**For detailed instructions, see:** `Documentation/setup_guide.md`
-
 ---
-
 
 
 ## Attribution
