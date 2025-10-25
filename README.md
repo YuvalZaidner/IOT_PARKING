@@ -29,11 +29,6 @@ An IoT-based smart parking management system that monitors parking spot occupanc
   - `simulation_sondos.py` — Simulation scripts for testing
   - `data_structures.py` — ParkingLot and Spot classes with BFS implementation
   - `static/` and `template/` — Frontend assets (CSS, JavaScript, HTML)
-* **Documentation**: Comprehensive guides including:
-  - `setup_guide.md` — Complete installation and setup instructions (7 steps)
-  - `calibration.md` — Sensor calibration guide (8 steps)
-  - `troubleshooting.md` — Detailed troubleshooting for Firebase, ESP32, Dashboard issues
-  - `error_messages.md` — Error message explanations and solutions
 * **UNIT TESTS**: Tests for individual hardware components and server logic:
   - `ESP32_Tests/` — Arduino test sketches (WiFi, Firebase, Ultrasonic, RGB LED)
   - `Server_Tests/` — Python pytest suite for server components and integration tests
